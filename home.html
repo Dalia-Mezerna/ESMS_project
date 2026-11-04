@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>techmasterchef</title>
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+    <div class="home">
+
+        <div class="logo">
+            <img src="assests/logo1.png" alt="Tech MasterChef">
+        </div>
+
+        <div class="elipse1">
+            <img src="assests/Ellipse 3.svg" alt="">
+        </div>
+
+        <div class="elipse2">
+            <img src="assests/Ellipse 1.svg" alt="">
+        </div>
+
+        <nav class="navbar">
+            <div class="brand">
+                <img src="assests/logo3.png" alt="Tech MasterChef">
+            </div>
+
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Mentors</a>
+                <a href="#">Sponsors</a>
+                <a href="#">FAQs</a>
+                <a href="#">Contact</a>
+            </div>
+
+            <button class="register">
+                <img src="assests/logo2.svg" alt="">
+                Register now
+            </button>
+        </nav>
+
+        <div class="lhaut">
+            <img src="assests/Line 2.svg" alt="">
+        </div>
+        <div class="Tech">
+           <h3>tech</h3> 
+        </div> 
+    <div class="master">
+        <h1>MasterChef</h1>
+</div>
+<button class="cod">
+    COD IT .PLATE IT .SERVE IT
+</button>
+<div class="msg">
+    <pre> 
+        open the box,follow the hints and cook a digtal solution  
+                              that really helps someone.
+                     </pre>
+</div>
+<button class="now">
+    Register now
+</button>
+<button class="more">
+    learn more
+</button>
+
+
+
+
+<div class="ticket ticket-date">
+    <div class="ticket-label">
+        <span class="ticket-icon">◷</span>
+        Date
+    </div>
+
+    <p>07 - 10 - 2026</p>
+</div>
+
+
+<div class="ticket ticket-place">
+    <div class="ticket-label">
+        <span class="ticket-icon">⌖</span>
+        Place
+    </div>
+
+    <p>
+        ESI - National School of<br>
+        Computer Science
+    </p>
+</div>
+
+
+
+
+    </div>
+ <div class="decorations">
+
+        <div class="bas">
+            <img src="assests/line1.svg" alt="">
+            </div>
+            <div class="line">
+                <img src="assests/line3.svg" alt="">
+            </div>
+        
+ </div>
+    
+
+    <script>
+        const links = document.querySelectorAll(".nav-links a");
+
+        links[0].classList.add("active");
+
+        links.forEach(link => {
+            link.addEventListener("click", function() {
+                links.forEach(item => item.classList.remove("active"));
+                this.classList.add("active");
+            });
+        });
+    </script>
+</body>
+</html>
