@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech MasterChef</title>
+
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+
+    <!-- here add your files as i did here for about and footer CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/Questions.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/mentors.css">
+</head>
+
+<body>
+<!-- ================= HOME / HERO ================= -->
+<div class="home" id="home">
+
+    <div class="logo">
+        <img src="assests/logo1.png" alt="Tech MasterChef">
+    </div>
+
+    <div class="elipse1">
+        <img src="assests/Ellipse 3.svg" alt="">
+    </div>
+
+    <div class="elipse2">
+        <img src="assests/Ellipse 1.svg" alt="">
+    </div>
+
+    <nav class="navbar">
+        <div class="brand">
+            <img src="assests/logo3.png" alt="Tech MasterChef">
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#mentors">Mentors</a>
+            <a href="#sponsors">Sponsors</a>
+            <a href="#faq">FAQs</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <button class="register">
+            <img src="assests/logo2.svg" alt="">
+            Register now
+        </button>
+    </nav>
+
+    <div class="lhaut">
+        <img src="assests/Line 2.svg" alt="">
+    </div>
+
+    <!-- Hero text: ONE centered column (no more absolute pixel positions) -->
+    <div class="hero-content">
+        <h3 class="hero-tech">Tech</h3>
+        <h1 class="hero-master">MasterChef</h1>
+
+        <button class="cod">CODE IT • PLATE IT • SERVE IT</button>
+
+        <p class="msg">
+            Open the box, follow the hints and cook a digital solution<br>
+            that really helps someone.
+        </p>
+
+        <div class="hero-actions">
+            <button class="now">Register now</button>
+            <button class="more">Learn more</button>
+        </div>
+    </div>
+
+    <div class="ticket ticket-date">
+        <div class="ticket-label">
+            <span class="ticket-icon">◷</span>
+            Date
+        </div>
+        <p>XX- XX - 2026</p>
+    </div>
+
+    <div class="ticket ticket-place">
+        <div class="ticket-label">
+            <span class="ticket-icon">⌖</span>
+            Place
+        </div>
+        <p>
+            ESI - National School of<br>
+            Computer Science
+        </p>
+    </div>
+
+</div>
+
+<div class="decorations">
+    <div class="bas">
+        <img src="assests/line1.svg" alt="">
+    </div>
+    <div class="line">
+        <img src="assests/line3.svg" alt="">
+    </div>
+</div>
+
+<script>
+    const links = document.querySelectorAll(".nav-links a");
+
+    links[0].classList.add("active");
+
+    links.forEach(link => {
+        link.addEventListener("click", function () {
+            links.forEach(item => item.classList.remove("active"));
+            this.classList.add("active");
+        });
+    });
+</script>
+
+    <!-- ================= my section(dalia ^^):SECTION ABOUT ================= -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+
+            <!-- gauche -->
+            <div class="about-content">
+                <h2 class="about-title">
+                    A hackathon that feels like<br>
+                    a <span class="highlight">cooking show</span>
+                </h2>
+
+                <p class="about-description">
+                    Tech MasterChef is the CSE club's hackathon, inspired by cooking shows.
+                    Participants are split into mixed teams, with members from every department:
+                </p>
+
+                <div class="tags-group">
+                    <span class="tag">Development</span>
+                    <span class="tag">Design</span>
+                    <span class="tag">UI/UX</span>
+                    <span class="tag">AI</span>
+                </div>
+
+                <p class="mystery-text">
+                    Each team picks a mystery box.<br>
+                    Every box hides one of several real-life problems, revealed only through <span
+                        class="hint-highlight">hints</span>.
+                </p>
+
+                <!-- les cuties Post-it -->
+                <div class="hints-preview">
+                    <div class="hint-card card-1">
+                        <span class="hint-badge">Hint 1</span>
+                        <p>Grandma keeps forgetting her medicine</p>
+                    </div>
+                    <div class="hint-card card-2">
+                        <p>Maybe implement a reminder app for seniors </p>
+                        <div class="clock-wrapper">
+                            <svg class="clock-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="13" r="8"></circle>
+                                <polyline points="12 9 12 13 14 15"></polyline>
+                                <path d="M5 3L2 6"></path>
+                                <path d="M19 3L22 6"></path>
+                                <path d="M6.5 19.5L4 22"></path>
+                                <path d="M17.5 19.5L20 22"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--  Mystery Box  droite -->
+            <div class="about-illustration">
+                <div class="step-pill pill-open">Open the box</div>
+
+            <img src="assests/mystery-box 1.svg" alt="Mystery Box" class="mystery-box-img">
+
+                <div class="step-pill pill-follow">Follow the hints</div>
+                <div class="step-pill pill-cook">Cook the code</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- la section MENTORS / SPONSORS / FAQS  -->
+<!-- ================= MENTORS + SPONSORS ================= -->
+<section class="mentors-section" id="mentors">
+
+    <!-- Tries images/ first, then assests/; hides itself if neither exists (no broken-image box) -->
+    <img src="images/Vector.svg" alt="" class="wave-top"
+         onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='assests/Vector.svg';}else{this.style.display='none';}">
+
+    <div class="all">
+        <h2>Mentors</h2>
+        <p class="diff-mentors">Head chefs that will visit your kitchen, taste your ideas <br>and help your team stay on track</p>
+
+        <div class="mentor-container">
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partners & Sponsors (inside the mentors section so its top wave overlaps the gradient) -->
+    <section class="ps" id="sponsors">
+        <div class="ps__band">
+            <h2 class="ps__title">Our kitchen Partners &amp; Sponsors</h2>
+
+            <div class="ps__carousel">
+                <button class="ps__arrow ps__arrow--prev" aria-label="Previous"></button>
+
+                <div class="ps__viewport">
+                    <div class="ps__track">
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                    </div>
+                </div>
+
+                <button class="ps__arrow ps__arrow--next" aria-label="Next"></button>
+            </div>
+        </div>
+    </section>
+
+</section> <!-- this closing tag was missing: it swallowed the FAQ and footer -->
+
+<script>
+    /* Sponsors carousel: the arrows had no JavaScript before */
+    (() => {
+        const carousel = document.querySelector('.ps__carousel');
+        if (!carousel) return;
+
+        const track = carousel.querySelector('.ps__track');
+        const prev = carousel.querySelector('.ps__arrow--prev');
+        const next = carousel.querySelector('.ps__arrow--next');
+        const cards = track.children;
+        let index = 0;
+
+        const visible = () =>
+            parseInt(getComputedStyle(carousel).getPropertyValue('--n'), 10) || 4;
+
+        function update() {
+            const max = Math.max(0, cards.length - visible());
+            index = Math.min(Math.max(index, 0), max);
+
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const step = cards[0].getBoundingClientRect().width + gap;
+
+            track.style.transform = `translateX(${-index * step}px)`;
+            prev.disabled = index === 0;
+            next.disabled = index === max;
+        }
+
+        prev.addEventListener('click', () => { index--; update(); });
+        next.addEventListener('click', () => { index++; update(); });
+        window.addEventListener('resize', update);
+        update();
+    })();
+</script><!-- this closing tag was missing: it swallowed the FAQ and footer -->
+
+
+<script>
+    /* Sponsors carousel: the arrows had no JavaScript before */
+    (() => {
+        const carousel = document.querySelector('.ps__carousel');
+        if (!carousel) return;
+
+        const track = carousel.querySelector('.ps__track');
+        const prev = carousel.querySelector('.ps__arrow--prev');
+        const next = carousel.querySelector('.ps__arrow--next');
+        const cards = track.children;
+        let index = 0;
+
+        const visible = () =>
+            parseInt(getComputedStyle(carousel).getPropertyValue('--n'), 10) || 4;
+
+        function update() {
+            const max = Math.max(0, cards.length - visible());
+            index = Math.min(Math.max(index, 0), max);
+
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const step = cards[0].getBoundingClientRect().width + gap;
+
+            track.style.transform = `translateX(${-index * step}px)`;
+            prev.disabled = index === 0;
+            next.disabled = index === max;
+        }
+
+        prev.addEventListener('click', () => { index--; update(); });
+        next.addEventListener('click', () => { index++; update(); });
+        window.addEventListener('resize', update);
+        update();
+    })();
+</script>
+
+
+  <section class="faq" id="faq">
+
+    <!-- Top wave (replace the path with the exact one exported from Figma) -->
+    <div class="faq__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 136" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,60 C200,52 380,80 560,74 S820,48 1040,58 S1300,76 1440,64 L1440,136 L0,136 Z" />
+      </svg>
+    </div>
+
+    <div class="faq__section">
+
+      <h2 class="faq__title">Frequently Asked ...</h2>
+      <p class="faq__subtitle">These are frequently asked questions on Tech MasterChef</p>
+
+      <details class="faq__item">
+        <summary class="faq__question">
+          <span class="faq__text">Who can participate?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__answer">
+          <p>Anyone passionate about development, design, UI/UX, or AI, and eager to learn, explore new ideas, and enhance their skills is welcome to participate.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">
+          <span class="faq__text">What is inside the boxes?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__answer">
+          <p>Hints pointing to a real-life problem, plus the ingredients (constraints, target users, features) your solution must use. No peeking before the opening ceremony.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">
+          <span class="faq__text">How many participants are allowed in a team?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__answer">
+          <p>Teams of 4 people. Solo chefs are welcome too we'll help you find a team on the spot.</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary class="faq__question">
+          <span class="faq__text">Do I need prior knowledge in coding or design?</span>
+          <span class="faq__icon" aria-hidden="true"></span>
+        </summary>
+        <div class="faq__answer">
+          <p>No need to master everything: teams mix developers, designers, UI/UX and AI profiles so skills complement each other, and mentors visit the teams to guide them.</p>
+        </div>
+      </details>
+
+    </div>
+
+    <!-- No bottom wave here: the footer already draws its own top wave -->
+  </section>
+
+
+
+    <!-- ================= SECTION FOOTER ================= -->
+    <footer class="site-footer">
+        <!-- SVG vague  -->
+        <div class="footer-wave">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,45 C650,120 900,10 1200,50 L1200,120 L0,120 Z" fill="#0c1a2d"></path>
+            </svg>
+        </div>
+
+        <div class="footer-container">
+            <!-- Colonne 1-->
+        <div class="footer-brand">
+            <img src="assests/Simple.svg" alt="Tech MasterChef Logo" class="brand-logo">
+            <div class="brand-text">
+                <h3>Tech MasterChef</h3>
+                <p>CSE's MasterChef inspired hackathon.</p>
+            </div>
+        </div>
+
+            <!-- Colonne 2 les links -->
+            <div class="footer-links">
+                <h4 class="footer-title">Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#mentors">Mentors</a></li>
+                    <li><a href="#sponsors">Partners & Sponsors</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3  Contacts & reseaux -->
+            <div class="footer-contact-block">
+                <h4 class="footer-title">Follow us</h4>
+                <div class="social-icons">
+                    <!-- Facebook -->
+                    <a href="#" class="social-icon" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37h-2.5v7h-3v-7h-2v-2.5h2V7a3 3 0 0 1 3-3h2.5v2.5h-2a1 1 0 0 0-1 1v1.37h3l-.5 2.5z"></path>
+                        </svg>
+                    </a>
+                    <!-- Instagram -->
+                    <a href="#" class="social-icon" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <circle cx="12" cy="12" r="4"></circle>
+                            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+                        </svg>
+                    </a>
+                    <!-- YouTube -->
+                    <a href="#" class="social-icon" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="6" ry="6"></rect>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a href="#" class="social-icon" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <circle cx="4.5" cy="4.5" r="1.5"></circle>
+                            <path d="M3 9h3v11H3z"></path>
+                            <path
+                                d="M10 9h3v1.8c.6-1.1 1.9-2 3.6-2 3 0 4.4 1.8 4.4 5.2V20h-3v-5.2c0-1.5-.5-2.5-1.9-2.5-1.1 0-1.8.8-2.1 1.6V20h-3V9z">
+                            </path>
+                        </svg>
+                    </a>
+                </div>
+
+                <h4 class="footer-title">Contact</h4>
+                <div class="contact-details">
+                    <p>📍 ESI - National Higher School Of Computer Science</p>
+                    <p>✉️ cse@esi.dz</p>
+                </div>
+
+                <a href="#contact" class="btn-contact">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

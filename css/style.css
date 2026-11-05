@@ -1,0 +1,35 @@
+/* Variables de couleurs inspirées de la maquette Tech MasterChef */
+:root {
+    --bg-primary: #a32e1d;
+    
+    --bg-creamy: #fbf7ee;
+    
+    --bg-footer: #0c1a2d;
+  
+    --accent-yellow: #f2a93b;
+   
+    --accent-cyan: #d6f2ec;
+  
+    --text-dark: #1e1e1e;
+    --text-light: #ffffff;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: var(--bg-creamy);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

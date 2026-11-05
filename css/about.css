@@ -1,0 +1,182 @@
+.about-section {
+    position: relative;
+    background-color: var(--bg-creamy);
+    /* Effet quadrillage léger façon cahier de recettes */
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    padding: 80px 24px;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.about-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.about-title .highlight {
+    font-style: italic;
+    color: #c84b31;
+    border-bottom: 3px dotted #c84b31;
+}
+
+.about-description {
+    font-size: 1.05rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.tags-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.tag {
+    background-color: var(--accent-yellow);
+    color: #3d2300;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.mystery-text {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 30px;
+}
+
+.mystery-text span.hint-highlight {
+    border-bottom: 2px dotted #c84b31;
+    font-weight: 600;
+}
+
+/* Post-it / Cartes d'indices */
+.hints-preview {
+    display: flex;
+    gap: 16px;
+}
+
+.hint-card {
+    background-color: #e3f5f0;
+    border: 1.5px dashed #488075;
+    border-radius: 12px;
+    padding: 14px 16px;
+    max-width: 200px;
+    font-size: 0.85rem;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.hint-card.card-1 {
+    transform: rotate(-3deg);
+}
+
+.hint-card.card-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.clock-wrapper {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Affichage du SVG de la Mystery Box */
+.about-illustration {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mystery-box-img {
+    width: 100%;
+    max-width: 280px;
+    /* Ajuste entre 260px et 320px selon ton rendu Figma */
+    height: auto;
+    margin: 15px 0;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+    /* Légère ombre élégante */
+}
+
+.hint-badge {
+    background: #f7a93b;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+/* Colonne droite : Illllustration mystery bbox */
+
+.step-pill {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin: 10px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pill-open {
+    background-color: #f7a93b;
+    color: #fff;
+}
+
+.pill-follow {
+    background-color: #172a3a;
+    color: #fff;
+}
+
+.pill-cook {
+    background-color: #a32e1d;
+    color: #fff;
+}
+
+
+
+.box-lid {
+    position: absolute;
+    top: -24px;
+    width: 240px;
+    height: 35px;
+    background: #962a1e;
+    border: 4px solid #1a1a1a;
+    border-radius: 6px;
+    transform: rotate(-7deg);
+}
+
+.mystery-question {
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+}

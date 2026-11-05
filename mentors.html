@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+    <script src="mentors.js" defer></script>
+
+</head>
+<body>
+    
+<!-- ================= MENTORS + SPONSORS ================= -->
+<section class="mentors-section" id="mentors">
+
+    <!-- check the folder name: your other images use "assests/" -->
+    <img src="assests/Vector.svg" alt="" class="wave-top">
+
+    <div class="all">
+        <h2>Mentors</h2>
+        <p class="diff-mentors">Head chefs that will visit your kitchen, taste your ideas <br>and help your team stay on track</p>
+
+        <div class="mentor-container">
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+            <div class="mentor-card">
+                <div class="mentor-image"></div>
+                <h3>Mentors Name</h3>
+                <p class="description">Mentor description <br>here ...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partners & Sponsors (inside the mentors section so its top wave overlaps the gradient) -->
+    <section class="ps" id="sponsors">
+        <div class="ps__band">
+            <h2 class="ps__title">Our kitchen Partners &amp; Sponsors</h2>
+
+            <div class="ps__carousel">
+                <button class="ps__arrow ps__arrow--prev" aria-label="Previous"></button>
+
+                <div class="ps__viewport">
+                    <div class="ps__track">
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                        <div class="ps__card">[Logo]</div>
+                    </div>
+                </div>
+
+                <button class="ps__arrow ps__arrow--next" aria-label="Next"></button>
+            </div>
+        </div>
+    </section>
+
+</section> <!-- this closing tag was missing: it swallowed the FAQ and footer -->
+
+<script>
+    /* Sponsors carousel: the arrows had no JavaScript before */
+    (() => {
+        const carousel = document.querySelector('.ps__carousel');
+        if (!carousel) return;
+
+        const track = carousel.querySelector('.ps__track');
+        const prev = carousel.querySelector('.ps__arrow--prev');
+        const next = carousel.querySelector('.ps__arrow--next');
+        const cards = track.children;
+        let index = 0;
+
+        const visible = () =>
+            parseInt(getComputedStyle(carousel).getPropertyValue('--n'), 10) || 4;
+
+        function update() {
+            const max = Math.max(0, cards.length - visible());
+            index = Math.min(Math.max(index, 0), max);
+
+            const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+            const step = cards[0].getBoundingClientRect().width + gap;
+
+            track.style.transform = `translateX(${-index * step}px)`;
+            prev.disabled = index === 0;
+            next.disabled = index === max;
+        }
+
+        prev.addEventListener('click', () => { index--; update(); });
+        next.addEventListener('click', () => { index++; update(); });
+        window.addEventListener('resize', update);
+        update();
+    })();
+</script>
+  
+       
+     
+
+</body>
+</html>
+
+
+
+

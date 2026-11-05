@@ -1,0 +1,259 @@
+
+
+:root {
+  /* --- Figma values --- */
+  --faq-bg: #e0f2fe;;            /* FAQs frame background */
+  --faq-card: #ffffff;          /* Question 1 fill */
+  --faq-title-color: #000000;   /* heading color */
+
+  /* --- Estimated (not in the specs I received) --- */
+  --faq-ink: #0f1b3d;           /* subtitle + question text */
+  --faq-border: #7a7a7a;        /* dashed border color */
+  --faq-accent: #d4401c;        /* plus icon circle */
+  --faq-divider: #f0806c;       /* dashed line inside the open card */
+
+  --wave-top: #F2B233;          /* orange above the wave (estimated) */
+  --wave-bottom: #101c3e;       /* navy at the bottom (estimated) */
+
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+}
+
+/* ---------- FAQs frame: 1440 x 1357 ---------- */
+.faq {
+  background: var(--faq-bg);
+  min-height: 1357px;
+  display: flex;                /* lets the bottom wave sit at the very bottom */
+  flex-direction: column;            /* centers the frame in the viewport */
+}
+
+/* ---------- Top wave: orange band + mint wave edge ---------- */
+.faq__wave {
+  background: var(--wave-top);
+  line-height: 0;               /* no gap under the svg */
+}
+
+.faq__wave svg {
+  display: block;
+  width: 100%;
+  height: clamp(60px, 9.4vw, 136px);   /* ~136px tall at 1440 */
+}
+
+.faq__wave path {
+  fill: var(--faq-bg);          /* wave is the section's own color */
+}
+
+/* ---------- FAQ section: fixed 1016, vertical, gap 54 ---------- */
+.faq__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(24px, 3.75vw, 54px);
+  width: min(calc(100% - 32px), 1016px);
+  margin: clamp(0px, 0.5vw, 8px) auto 0;
+  padding-bottom: 80px;         /* breathing room above the bottom wave */
+}
+
+/* ---------- Bottom wave: mint above, navy edge below ---------- */
+.faq__wave--bottom {
+  margin-top: auto;             /* pins it to the bottom of the 1357px frame */
+  background: var(--faq-bg);
+}
+
+.faq__wave--bottom svg {
+  height: clamp(44px, 6.9vw, 100px);   /* ~100px tall at 1440 */
+}
+
+.faq__wave--bottom path {
+  fill: var(--wave-bottom);
+}
+
+/* ---------- Heading: Fraunces SemiBold 48px, centered ---------- */
+.faq__title {
+  width: 100%;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(30px, 3.34vw, 48px);
+  line-height: 1.23;            /* Figma "100%" = font's natural line height (59px) */
+  letter-spacing: 0;
+  text-align: center;
+  color: var(--faq-title-color);
+}
+
+/* ---------- Subtitle ---------- */
+.faq__subtitle {
+  margin: 0;
+  font-size: clamp(16px, 2.23vw, 32px);   /* estimated 32px at 1440 */
+  font-weight: 400;
+  line-height: 1.28;
+  text-align: center;
+  color: #000000;
+}
+
+
+.faq__subtitle {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Question card: Fill (929), Hug, radius 20, padding 24 ---------- */
+.faq__item {
+  position: relative;
+  width: min(100%, 929px);
+  background: var(--faq-card);
+  border-radius: clamp(14px, 1.39vw, 20px);
+}
+
+/* 1px dashed border with exact 7px dash / 7px gap (CSS "dashed" can't set this).
+   The stroke is 2px wide and half is clipped, leaving a crisp 1px line. */
+.faq__item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Crect width='100%25' height='100%25' rx='20' ry='20' fill='none' stroke='%237a7a7a' stroke-width='2' stroke-dasharray='7 7'/%3E%3C/svg%3E")
+    no-repeat center / 100% 100%;
+}
+
+/* ---------- Question row: horizontal, space-between, hug 42 ---------- */
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(16px, 1.67vw, 24px);
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question:focus-visible {
+  outline: 3px solid var(--faq-accent);
+  outline-offset: 2px;
+  border-radius: inherit;
+}
+
+.faq__text {
+  font-size: clamp(16px, 1.67vw, 24px);   /* estimated 24px at 1440 */
+  font-weight: 700;
+  line-height: 1.28;
+  color: var(--faq-ink);
+}
+
+/* ---------- Plus icon (42px so the row hugs to 42px) ---------- */
+.faq__icon {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(30px, 2.92vw, 42px);
+  height: clamp(30px, 2.92vw, 42px);
+  border-radius: 50%;
+  background: var(--faq-accent);
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.faq__icon::before { width: 48%; height: 11%; }   /* horizontal bar */
+.faq__icon::after  { width: 11%; height: 48%; }   /* vertical bar */
+
+/* open state: plus rotates into a × */
+.faq__icon {
+  transition: transform 0.25s ease;
+}
+
+.faq__item[open] .faq__icon {
+  transform: rotate(45deg);
+}
+
+/* open card: padding 24 + gap 30 between row, divider and answer */
+.faq__item[open] .faq__question {
+  padding-bottom: 0;
+}
+
+/* BOX HOVER ANIMATION */
+.faq__item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.faq__item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Answer (card gap 30 between question and answer) ---------- */
+.faq__answer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.08vw, 30px);              /* Figma gap: 30 */
+  padding: clamp(18px, 2.08vw, 30px) clamp(16px, 1.67vw, 24px) clamp(16px, 1.67vw, 24px);
+}
+
+/* dashed red divider between question and answer */
+.faq__answer::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--faq-divider) 0 4px,
+    transparent 4px 7px
+  );
+}
+
+.faq__answer p {
+  margin: 0;   
+  font-size: 25px;    /* Space Grotesk Regular 32px */
+  font-weight: 400;
+  line-height: 130%;                            /* 130% */
+  letter-spacing: 0;
+  color: var(--faq-ink);
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 900px) {
+  .faq {
+    min-height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq__icon::before,
+  .faq__icon::after {
+    transition: none;
+  }
+}
